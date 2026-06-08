@@ -656,9 +656,9 @@ elif st.session_state.screen == "game":
                 with chat_container:
                     for msg in room.get("messages", []):
                         if msg["sender"] == st.session_state.my_name:
-                            st.markdown(f"<div style='text-align:right; margin-bottom:8px;'><span style='background:rgba(0, 212, 255, 0.2); padding:5px 10px; border-radius:12px; font-size:14px;'>{msg['text']}</span></div>", unsafe_allow_html=True)
+                            st.markdown(f"<div style='text-align:right; margin-bottom:8px;'><span style='background:rgba(0, 212, 255, 0.25); color:white; padding:8px 14px; border-radius:16px 16px 0px 16px; font-size:14px; display:inline-block; max-width:85%; word-wrap:break-word; text-align:left; line-height:1.4; border:1px solid rgba(0,212,255,0.1);'>{msg['text']}</span></div>", unsafe_allow_html=True)
                         else:
-                            st.markdown(f"<div style='text-align:left; margin-bottom:8px;'><span style='font-size:11px; color:#cbd5e1;'>{msg['sender']}</span><br><span style='background:rgba(255, 255, 255, 0.1); padding:5px 10px; border-radius:12px; font-size:14px;'>{msg['text']}</span></div>", unsafe_allow_html=True)
+                            st.markdown(f"<div style='text-align:left; margin-bottom:8px;'><span style='font-size:11px; color:#cbd5e1; margin-left:4px;'>{msg['sender']}</span><br><span style='background:rgba(255, 255, 255, 0.15); color:white; padding:8px 14px; border-radius:16px 16px 16px 0px; font-size:14px; display:inline-block; max-width:85%; word-wrap:break-word; line-height:1.4; border:1px solid rgba(255,255,255,0.05);'>{msg['text']}</span></div>", unsafe_allow_html=True)
                 
                 def send_message():
                     text = st.session_state.get("chat_input_val", "").strip()
